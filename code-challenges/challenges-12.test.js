@@ -7,8 +7,8 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 ------------------------------------------------------------------------------------------------ */
 
 const replaceZeros = (string) => {
-  let a = /0/g;
-  return string.replace(a,'zero');;
+  let regex = /0/g;
+  return string.replace(regex,'zero');;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,12 +65,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  let regex = /^(\w+|\w+\.?\w+)@{1}\w+[.](com|net|org)$/g;
-  if (email.match(regex)) {
-    return true;
-  } else {
-    return false;
-  }
+  let regex= /^(\w+|\w+\.?\w+)@{1}\w+[.](com|net|org)$/g;
+  return regex.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -95,12 +91,8 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  let regex = /^(\(\d{3}\)|\d{3})(\s?|-)(\d{3})(\s?|-?)(\d{4})$/g;
-  if (phoneNumber.match(regex)) {
-    return true;
-  } else {
-    return false;
-  }
+  let regex= /^(\(\d{3}\)|\d{3})(\s?|-)(\d{3})(\s?|-?)(\d{4})$/g;
+  return regex.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
